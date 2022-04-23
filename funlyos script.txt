@@ -1,0 +1,123 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local TextButton = Instance.new("TextButton")
+local CoolButton = Instance.new("TextButton")
+local Autobuy = Instance.new("TextButton")
+local TextBox = Instance.new("TextBox")
+
+--Properties:
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Frame.Parent = ScreenGui
+Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Frame.Position = UDim2.new(0, 0, 0.362745106, 0)
+Frame.Size = UDim2.new(0, 301, 0, 167)
+
+TextButton.Parent = Frame
+TextButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton.Position = UDim2.new(0, 0, 0.353293419, 0)
+TextButton.Size = UDim2.new(0, 200, 0, 50)
+TextButton.Font = Enum.Font.SourceSans
+TextButton.Text = "Stop autodupe(Coming soon)"
+TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton.TextSize = 14.000
+
+CoolButton.Name = "CoolButton"
+CoolButton.Parent = TextButton
+CoolButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CoolButton.Position = UDim2.new(0, 0, -1.17999995, 0)
+CoolButton.Size = UDim2.new(0, 200, 0, 50)
+CoolButton.Font = Enum.Font.SourceSans
+CoolButton.Text = "Autodupe"
+CoolButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+CoolButton.TextSize = 14.000
+
+Autobuy.Name = "Autobuy"
+Autobuy.Parent = Frame
+Autobuy.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Autobuy.Position = UDim2.new(0, 0, 0.700598776, 0)
+Autobuy.Size = UDim2.new(0, 200, 0, 50)
+Autobuy.Font = Enum.Font.SourceSans
+Autobuy.Text = "Autobuy banana(Will work soon)"
+Autobuy.TextColor3 = Color3.fromRGB(0, 0, 0)
+Autobuy.TextSize = 14.000
+
+TextBox.Parent = Frame
+TextBox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextBox.Position = UDim2.new(-0.0299003329, 0, -0.353293419, 0)
+TextBox.Size = UDim2.new(0, 310, 0, 50)
+TextBox.Font = Enum.Font.GothamBlack
+TextBox.Text = "Made by FunlyoTheFirst#0001"
+TextBox.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextBox.TextSize = 22.000
+TextBox.TextWrapped = true
+
+-- Scripts:
+
+local function POLRC_fake_script() -- Frame.LocalScript 
+	local script = Instance.new('LocalScript', Frame)
+
+	
+end
+coroutine.wrap(POLRC_fake_script)()
+local function SNRA_fake_script() -- CoolButton.CoolButtonScript 
+	local script = Instance.new('LocalScript', CoolButton)
+
+	a = false
+	
+	CoolButton.MouseButton1Down:connect(function()
+		local args = {
+			[1] = "The banana"
+		}
+		a = true
+		while a == true do
+			game:GetService("ReplicatedStorage").RemoteEvents.Sell:FireServer(unpack(args))
+			local args = {
+				[1] = "The banana" 
+			}
+	
+			game:GetService("ReplicatedStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args))
+			wait(.37)
+			game:GetService("ReplicatedStorage").RemoteEvents.Sell:FireServer(unpack(args))
+			local args = {
+				[1] = "The banana" 
+			}
+			game:GetService("ReplicatedStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args))
+			wait(.09)
+			game:GetService("ReplicatedStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args))
+			wait(.45)
+			if script.Parent.Parent.MouseButton1Down = true  then
+				break
+			end
+		end
+	
+	end)
+	
+	
+	
+end
+coroutine.wrap(SNRA_fake_script)()
+local function JAZG_fake_script() -- Autobuy.LocalScript 
+	local script = Instance.new('LocalScript', Autobuy)
+
+	script.Parent.MouseButton1Down:Connect(function()
+			local args{
+				[1] = "The banana"
+			}
+	
+	
+			
+	
+			game:GetService("ReplicatedStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args))
+			
+	end)
+	
+end
+coroutine.wrap(JAZG_fake_script)()
